@@ -13,7 +13,7 @@ Message.init(
             primaryKey: true,
             notNull: true,
             autoincrement: true,
-            references: {model: Comment, key: 'message_id'}
+            //references: {model: Comment, key: 'message_id'}
         },
         content: {type: DataTypes.STRING},
         username: {type: DataTypes.STRING, allowNull:false, references: {model: User, key: 'user_id'}},
