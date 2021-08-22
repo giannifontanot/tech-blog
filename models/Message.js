@@ -1,22 +1,29 @@
 const {DataTypes, Model} = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
+const Comment = require('./Comment');
 
 class Message extends Model {
-
 }
 
 Message.init(
     {
-        id: {type: DataTypes.Number, primaryKey: true, notNull: true, autoincrement: true,references:{model: User, key:'username'}},
-        content: {type: DataTypes.String}
+        message_id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            notNull: true,
+            autoincrement: true,
+            references: {model: Comment, key: 'message_id'}
+        },
+        content: {type: DataTypes.STRING},
+        username: {type: DataTypes.STRING, allowNull:false, references: {model: User, key: 'user_id'}},
     },
     {
         sequelize,
         freezeTableName: true,
         modelName: 'Message',
-        underscored: true,
         timestamps: false,
+        underscored: true,
     }
 );
 
