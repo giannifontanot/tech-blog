@@ -3,7 +3,7 @@ const Message = require('./Message');
 const Comment = require('./Comment');
 
 
-Message.belongsTo(User, {foreignKey:'username', onDelete:'CASCADE'});
+Message.belongsTo(User, {foreignKey:'user_id', onDelete:'CASCADE'});
 
 Message.hasMany(Comment, {foreignKey:'message_id', onDelete:'CASCADE'});
 Comment.belongsTo(User, {foreignKey:'user_id', onDelete:'CASCADE'});
