@@ -1,0 +1,5 @@
+[
+  {"comment_id":1,"content": "comment 1 for message 1","message_id": 1},
+  {"comment_id":2,"content": "comment 2 for message 2","message_id": 2},
+  {"comment_id":3,"content": "comment 3 for message 3","message_id": 3}
+]
