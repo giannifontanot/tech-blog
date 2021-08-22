@@ -9,10 +9,11 @@ class User extends Model {
 
 User.init(
     {
-        username:{type: DataTypes.String, primaryKey:true, notNull:true, references:{model: Message, key: 'id'}},
-        first_name:{type: DataTypes.String, notNull:true},
-        last_name:{type: DataTypes.String, notNull:true},
-        password:{type: DataTypes.String, notNull:true},
+        user_id:{type: DataTypes.INTEGER, primaryKey:true, notNull:true,},
+        username:{type: DataTypes.STRING, allowNull:false, unique:true},
+        first_name:{type: DataTypes.STRING, allowNull:false},
+        last_name:{type: DataTypes.STRING, allowNull:false},
+        password:{type: DataTypes.STRING, allowNull:false},
     },
     {
         sequelize,
