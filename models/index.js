@@ -1,28 +1,16 @@
-const User = require('./User');
-const Message = require('./Message');
-const Comment = require('./Comment');
-
-//
-// Message.belongsTo(User, {foreignKey:'user_id', onDelete:'CASCADE'});
-//
-// Message.hasMany(Comment, {foreignKey:'message_id', onDelete:'CASCADE'});
-// Comment.belongsTo(User, {foreignKey:'user_id', onDelete:'CASCADE'});
+const Sequelize = require('sequelize');
+const User = require('./User')
+const Message = require('./Message')
+const Comment = require('./Comment')
 
 
+User.hasMany(Message, {foreignKey: {name: 'user_id', allowNull: false,}});
+Message.belongsTo(User);
 
+Message.hasMany(Comment, {foreignKey: {name: 'message_id', allowNull: false,}});
+Comment.belongsTo(Message);
 
-
-
-
-
-
-User.hasMany(Message,{foreignKey:'user_id', });
-Message.belongsTo(User, {foreignKey:'user_id', });
-
-Message.hasMany(Comment, {foreignKey:'message_id', });
-Comment.belongsTo(Message, {foreignKey:'message_id',});
-
-User.hasMany(Comment,{foreignKey:'user_id',});
-Comment.belongsTo(User,{foreignKey:'user_id', });
+User.hasMany(Comment, {foreignKey: {name: 'user_id', allowNull: false,}});
+Comment.belongsTo(User);
 
 module.exports = {User, Message, Comment}
