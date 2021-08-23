@@ -1,0 +1,9 @@
+- Run in Heroku
+- Uses Sequelize
+- Handlebars templates
+- Express-session package
+
+- dotenv package
+- bcrypt package
+- express-session
+- connect-session-sequelize

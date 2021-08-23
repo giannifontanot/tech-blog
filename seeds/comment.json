@@ -1,16 +1,21 @@
 [
   {
-    "content": "comment 1 for message 1",
+    "content": "comment 1 for message 1 - user 1",
     "message_id": 1,
     "user_id": 1
   },
   {
-    "content": "comment 2 for message 2",
+    "content": "comment 2 for message 2 - user 2",
     "message_id": 2,
     "user_id": 2
   },
   {
-    "content": "comment 3 for message 3",
+    "content": "comment 2 for message 2 - user 3",
+    "message_id": 2,
+    "user_id": 3
+  },
+  {
+    "content": "comment 3 for message 3 -user 3",
     "message_id": 3,
     "user_id": 3
   }
