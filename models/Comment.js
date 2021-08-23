@@ -1,5 +1,6 @@
 const {DataTypes, Model} = require('sequelize');
 const Message = require('./Message');
+const User = require('./User');
 const sequelize = require('../config/connection');
 
 class Comment extends Model {
@@ -8,15 +9,21 @@ class Comment extends Model {
 
 Comment.init(
     {
-        comment_id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true,},
-        content: {type: DataTypes.STRING, allowNull:false,},
-        message_id: {type: DataTypes.INTEGER, allowNull:false, references: {model: Message, key: "message_id"}}
+        id: {type: DataTypes.INTEGER, primaryKey: true,  allowNull: false, autoIncrement: true,},
+        content: {type: DataTypes.STRING, allowNull: false,},
+        //message_id: {type: DataTypes.INTEGER, allowNull: false},
+        //user_id: {type: DataTypes.INTEGER, allowNull: false}
+
+        // message_id: {type: DataTypes.INTEGER, allowNull: false, references: {model: sequelize.models.Message, key: "message_id"}},
+        // user_id: {type: DataTypes.INTEGER, allowNull: false, references: {model: sequelize.models.User, key: "user_id"}}
+
     },
     {
         sequelize,
-        freezeTableName: true,
-        underscore: true,
         modelName: 'Comment',
+        freezeTableName: true,
+        underscored: true,
+        timestamps: false,
     },
 );
 

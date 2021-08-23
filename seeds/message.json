@@ -1,5 +1,5 @@
 [
-  {"message_id": 1, "content":"Hey, this is the first message", "username":"harrisonford"},
-  {"message_id": 2, "content":"Hey, this is the second message", "username":"carriefisher"},
-  {"message_id": 3, "content":"Hey, this is the third message", "username":"markhamill"}
+  {"title":"Title 1", "content":"Hey, this is the first message", "user_id":1},
+  {"title":"Title 2", "content":"Hey, this is the second message", "user_id":2},
+  {"title":"Title 3", "content":"Hey, this is the third message", "user_id":3}
 ]
