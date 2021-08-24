@@ -1,11 +1,21 @@
-const router =  require('express').Router();
+const router = require('express').Router();
+const {Message, Comment, User} = require('../models/');
 
-router.get('/',(req,res)=>{
-    res.status(200).send('home');
+
+router.get('/', async (req, res) => {
+    try {
+
+        const dbMessagesData = await Message.findAll({ include: { all: true, nested: true }});
+
+        const messages = dbMessagesData.map(message =>
+            message.get({plain: true})
+        );
+
+        res.render('homepage', {messages});
+    } catch
+        (e) {
+        res.status(400).send(e.message);
+    }
 });
-
-
-
-
 
 module.exports = router;

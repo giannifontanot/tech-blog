@@ -17,8 +17,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 const run = async () => {
-    const sequelizeResult = await sequelize.sync({force: true});
-    console.log("---> sequelizeResult :" + (sequelizeResult));
+    //const sequelizeResult = await sequelize.sync({force: true});
+    //console.log("---> sequelizeResult :" + (sequelizeResult));
     await app.listen(PORT, () => {
         console.log('Server listening on port %j', PORT);
     });
