@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "dependencies": {
     "app-root-path": "^3.0.0",
+    "connect-session-sequelize": "^7.1.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "mysql2": "^2.3.0"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
+    "express-session": "^1.17.2",
     "sequelize": "^6.6.5"
   }
 }

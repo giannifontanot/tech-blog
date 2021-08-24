@@ -1,4 +1,7 @@
 <h1>DASHBOARD</h1>
 {{#each messages as |message|}}
-{{> messages}}
+    {{> messages}}
 {{/each}}
+<form action="/message/newMessage" method="get">
+    <button>New Message</button>
+</form>
