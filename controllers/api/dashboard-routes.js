@@ -7,11 +7,13 @@ router.get('/:user_id', async (req, res) => {
         where:{user_id:req.params.user_id},
     });
 
-    const messages = dbMessageData.map((element, index, array)=>{
-        element.get({plain:true});
+    const  messages  = dbMessageData.map((element, index, array)=>{
+        return element.get({plain:true});
     });
 
-    res.render('dashboard',messages);
+          console.log("--c-> messages :" + JSON.stringify (messages) );
+     console.log("---> messages length:" +  (messages).length );
+    res.render('dashboard', {messages} );
 });
 
 

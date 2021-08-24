@@ -9,7 +9,7 @@ router.use('/', home_routes);
 router.use('/dashboard', dashboard_routes);
 router.use('/api/message', message_routes);
 router.use('/api/comment', comment_routes);
-router.use('/api/user', user_routes);
+router.use('/user', user_routes);
 
 
 
