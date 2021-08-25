@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-loggedIn: {{session.loggedIn}} - userId: {{session.userId}} - username: {{session.username}}
 <header>
     <!--    if signed-->
     <nav>
         <a href="/">Home</a>
         {{#if session.loggedIn}}
             <a href="/user/logout">Logout</a>
+            <a href="/dashboard/{{session.userId}}">Dashboard</a>
+            <span><h4>Uber: {{session.username}}</h4></span>
         {{else}}
             <a href="/user/login">Login</a>
         {{/if}}
-        <a href="/dashboard/{{session.userId}}">Dashboard</a>
-        <h4>Userx:{{session.username}}</h4>
+
+
     </nav>
 </header>
 

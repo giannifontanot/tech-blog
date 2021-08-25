@@ -27,7 +27,7 @@ router.get('/:user_id', async (req, res) => {
 
     console.log("---> messages length:" + (messages.length));
     res.render('dashboard', {messages, session:req.session,});
-});y5
+});
 
 
 module.exports = router;

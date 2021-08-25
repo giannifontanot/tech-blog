@@ -51,8 +51,9 @@ router.get('/newUser', (req, res) => {
     res.render('newUser');
 });
 
-router.post('/saveUser', (req, res) => {
-    res.render('dashboard',{session:req.session,},)
+router.post('/saveUser', async (req, res) => {
+    const newUser = await User.create({username: req.body.username, first_name: req.body.first_name, last_name: req.body.last_name, password: req.body.password});
+        res.render('login',{session:req.session,},)
 });
 module.exports = router;
 

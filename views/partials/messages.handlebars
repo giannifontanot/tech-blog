@@ -1,11 +1,11 @@
 <article>
     <section class="card">
         {{title}}. <br>
-        {{content}}. <button>UPDATE</button><br>
+        {{content}}. <button>UPDATE MESSAGE</button><br>
         {{#each Comments as |comment|}}
             {{>comments-details}}
         {{/each}}
 
-        <a href="/">new comment</a>
+        <a href="/comment/newComment">new comment</a>
     </section>
 </article>
