@@ -8,12 +8,13 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/logout', (req, res) => {
-    req.session.destroy(() => {
-        const messages = dbQueries.getMessagesAll();
-        console.log("---> messages :" + JSON.stringify(messages));
-        console.log("---> messages length:" + (messages.length));
-        res.render('dashboard', {messages, loggedIn: false});
+router.get('/logout',  (req, res) => {
+    req.session.destroy(async() => {
+        const dbMessageData = await Message.findAll();
+        const messages = dbMessageData.map((element)=>{
+        element.get({plain:true});
+        });
+        res.render('dashboard', {messages,  session:req.session,});
     });
 });
 
@@ -21,17 +22,26 @@ router.post('/verify', async (req, res) => {
 
     try {
 
-        const  user  = await User.findOne({where: {username: req.body.username}});
-         console.log("---> user :" + JSON.stringify (user) );
-        const   userValid   = await User.findOne({where: {password: req.body.password}});
-         console.log("---> userValid :" + JSON.stringify (userValid) );
+        const user = await User.findOne({where: {username: req.body.username}});
 
-        await req.session.save(() => {
-            req.session.loggedIn = true;
+        if ( user !== null && (user.password === req.body.password )) {
 
-            const messages = {};
-            res.render('dashboard', {messages, loggedIn: req.session.loggedIn},);
-        });
+
+            await req.session.save(() => {
+                req.session.loggedIn = true;
+                req.session.userId  = user.id;
+                req.session.username  = user.username;
+
+            });
+                const dbMessagesData = await Message.findAll({where:{user_id:user.id}});
+                const messages = dbMessagesData.map(messages=>messages.get({plain:true}));
+                res.render('dashboard', {
+                    messages, session:req.session,
+                },);
+        } else {
+         res.render('error');
+        }
+
     } catch (e) {
         console.error(e.message);
     }
@@ -42,7 +52,32 @@ router.get('/newUser', (req, res) => {
 });
 
 router.post('/saveUser', (req, res) => {
-    res.render('dashboard');
+    res.render('dashboard',{session:req.session,},)
 });
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

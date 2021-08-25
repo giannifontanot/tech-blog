@@ -7,6 +7,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers/index');
 const sequelize = require('./config/connection');
 const seedAll = require('./seeds/seed-database');
+const MemoryStore = require('memorystore')(session)
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,7 +18,8 @@ const configSession = {
     cookie: {path:'/', maxAge: 86400,},
     resave: false,
     saveUninitialized: true,
-    store: new SequelizeStore({db: sequelize}),
+    //store: new SequelizeStore({db: sequelize}),
+    store: new MemoryStore({checkPeriod: 86400000}),
 };
 
 app.use(session(configSession));
