@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/"></form>
+<form action="/message/saveComment" method="POST">
+    <input type="text" name="content" value="this the content">
+    <input type="hidden" name="message_id" value="{{message_id}}">
+    <button>save comment</button>
+</form>
 </body>
 </html>

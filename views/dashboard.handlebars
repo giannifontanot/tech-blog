@@ -1,7 +1,9 @@
-<h1>DASHBOARD</h1>
-{{#each messages as |message|}}
-    {{> messages}}
-{{/each}}
 <form action="/message/newMessage" method="get">
-    <button>New Message</button>
+    <div class="container-dashboard-title dashboard-header">
+        <div class="vred">DASHBOARD</div>
+        <div class="btn-new-message vred"><button>NEW MESSAGE</button></div>
+    </div>
 </form>
+{{#each messages as |message|}}
+    {{> dashboard-detail}}
+{{/each}}

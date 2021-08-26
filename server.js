@@ -8,6 +8,7 @@ const routes = require('./controllers/index');
 const sequelize = require('./config/connection');
 const seedAll = require('./seeds/seed-database');
 const MemoryStore = require('memorystore')(session)
+const helpers = request = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 const configSession = {
     secret: 'this is a secret',
-    cookie: {path:'/', maxAge: 86400,},
+    cookie: {path:'/', maxAge: 86400000,},
     resave: false,
     saveUninitialized: true,
     //store: new SequelizeStore({db: sequelize}),
@@ -23,14 +24,16 @@ const configSession = {
 };
 
 app.use(session(configSession));
-const hbs = exphbs.create();
+const hbs = exphbs.create({helpers});
 
-app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(express.static(root + path.sep + 'public'));
+
+app.use('/public', express.static( 'public'));
+
 app.use(routes);
 
 

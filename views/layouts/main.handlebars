@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <header>
-    <!--    if signed-->
-    <nav>
-        <a href="/">Home</a>
-        {{#if session.loggedIn}}
-            <a href="/user/logout">Logout</a>
-            <a href="/dashboard/{{session.userId}}">Dashboard</a>
-            <span><h4>Uber: {{session.username}}</h4></span>
-        {{else}}
-            <a href="/user/login">Login</a>
-        {{/if}}
+   <div class="display-flex">
+       <div class="vred">
+           <nav>
+               <a href="/">Home</a>
+               {{#if session.loggedIn}}
+                   <a href="/user/logout">Logout</a>
+                   <a href="/dashboard/{{session.userId}}">Dashboard</a>
+               {{else}}
+                   <a href="/user/login">Login</a>
+               {{/if}}
+           </nav>
+       </div>
+       <div class="session-user vred">
+           <span class="session-user">User: {{session.username}}</span>
+       </div>
+   </div>
 
-
-    </nav>
+    <h1 class="blogName">The Tech Blog</h1>
 </header>
 
 

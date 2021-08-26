@@ -1,0 +1,12 @@
+<article>
+    <section class="card">
+        <div class="title">{{title}}</div>
+        <div class="content-message">   {{content}}  </div>
+
+        {{#each Comments as |comment|}}
+            {{>comments-details}}
+        {{/each}}
+
+        <div class="link-message"><a href="/message/newComment/{{id}}">new comment</a></div>
+    </section>
+</article>

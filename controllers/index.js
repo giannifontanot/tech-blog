@@ -10,7 +10,6 @@ router.use('/dashboard', dashboard_routes);
 router.use('/message', message_routes);
 router.use('/user', user_routes);
 
-console.log(__filename);
 
 
 

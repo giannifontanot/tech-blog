@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const dbQueries = require('../../lib/db-queries');
+const dbQueries = require('../../utils/db-queries');
 const {User, Message, Comment} = require('../../models');
-console.log(__filename);
-
 
 router.get('/login', (req, res) => {
     res.render('login');
@@ -10,11 +8,9 @@ router.get('/login', (req, res) => {
 
 router.get('/logout',  (req, res) => {
     req.session.destroy(async() => {
-        const dbMessageData = await Message.findAll();
-        const messages = dbMessageData.map((element)=>{
-        element.get({plain:true});
-        });
-        res.render('dashboard', {messages,  session:req.session,});
+        const dbMessageData = await Message.findAll({include: {all: true, nested: true},});
+        const messages = dbMessageData.map((element)=> element.get({plain:true}));
+        res.render('homepage', {messages,  session:req.session,});
     });
 });
 
