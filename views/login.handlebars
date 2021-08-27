@@ -1,20 +1,32 @@
-<html>
-<body>
-<form action="/user/verify" method="POST">
-    username<input type="text" name="username" value="harrisonford"><br>
-    password <input type="text" name="password" value="aaa"><br>
-    <button>login</button><br>
-</form>
-<form action="/user/verify" method="POST">
-    username<input type="text" name="username" value="carriefisher"><br>
-    password <input type="text" name="password" value="aaa"><br>
-    <button>login</button><br>
-</form>
-<form action="/user/verify" method="POST">
-    username<input type="text" name="username" value="markhamill"><br>
-    password <input type="text" name="password" value="aaa"><br>
-    <button>login</button><br>
-</form>
-    <a href="newUser">new user</a>
-</body>
-</html>
+
+    <section class="card">
+        <div class="title-message-container">
+            <div class="title">
+                login
+            </div>
+            <div class="btn-update-message">
+                <button>LOG IN</button>
+            </div>
+        </div>
+        <div class="content-message">
+            <form action="/user/verify" method="POST">
+                <div class="login-container">
+                    <div><input type="text" name="username" placeholder="username" value="harrisonford"></div>
+                    <div><input type="text" name="password" placeholder="password" value="aaa"></div>
+                </div>
+
+                <button>login</button><br>
+            </form>
+            <form action="/user/verify" method="POST">
+                username <input type="text" name="username" value="carriefisher"><br>
+                password <input type="text" name="password" value="aaa"><br>
+                <button>login</button><br>
+            </form>
+            <form action="/user/verify" method="POST">
+                username <input type="text" name="username" value="markhamill"><br>
+                password <input type="text" name="password" value="aaa"><br>
+                <button>login</button><br>
+            </form>
+        </div>
+        <div class="link-message"><a href="newUser">New user? SIGN UP!</a></div>
+    </section>

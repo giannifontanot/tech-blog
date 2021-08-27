@@ -1,20 +1,26 @@
-<form action="/message/saveMessage"  method="POST">
-<section class="card">
-    <div class="title-message-container">
-        <div class="title">
-            <input type="text" name="title" placeholder="Write your title here" value="" size="105">
+<form action="/message/saveMessage" method="POST">
+    <section class="card">
+        <div class="title-message-container">
+            <div class="title">
+                <input type="text" id="title" name="title" placeholder="Write your title here" value="" size="105">
+            </div>
+            <div class="btn-update-message">
+                <input type="button" onclick="checkBlanks()" value="SAVE MESSAGE">
+            </div>
         </div>
-        <div class="btn-update-message">
-            <button>SAVE MESSAGE</button>
+        <div class="content-message">
+        <textarea onclick='checkTextAreaNewMessage()'
+                  id="content"
+                  name="content"
+                  placeholder=""
+                  rows="5"
+                  cols="100">Write the content</textarea>
         </div>
-    </div>
-    <div class="content-message">
-        <textarea id="content" name="content" placeholder="" rows="5" cols="100">Write the content</textarea>
-    </div>
 
-    {{#each Comments as |comment|}}
-        {{>comments-details}}
-    {{/each}}
-    <div class="link-message"></div>
-</section>
+        {{#each Comments as |comment|}}
+            {{>comments-details}}
+        {{/each}}
+        <div class="link-message"></div>
+    </section>
 </form>
+<script src="../public/scripts/blanks.js"></script>

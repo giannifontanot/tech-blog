@@ -44,9 +44,40 @@ router.post('/saveMessage', async (req, res) => {
 
 });
 
-router.post('/updateMessage', async (req, res) => {
+router.post('/getMessage', async (req, res) => {
 
-    res.render('updateMessage', {message_id:req.body.message_id, session: req.session});
+    const dbMessageData = await Message.findByPk(req.body.message_id,);
+    console.log("---> dbMessageData :" + JSON.stringify(dbMessageData));
+    const message = {
+        "id": dbMessageData.id,
+        "title": dbMessageData.title,
+        "content": dbMessageData.content,
+        "user_id": dbMessageData.user_id,
+        "UserId": dbMessageData.user_id
+    }
+    console.log("---> message :" + JSON.stringify(message));
+    res.render('updateMessage', {message, session: req.session});
+
+});
+
+router.post('/updateMessage', async (req, res) => {
+    console.log("---> updateMessage :");
+    const message = await Message.update(
+        {
+            title: req.body.title,
+            content: req.body.content,
+        },
+        {where: {id: req.body.message_id}}
+    );
+
+    // By saving one message and redirecting to dashboard
+    const dbMessagesData = await Message.findAll({
+        // include: {all: true, nested: true},
+        where: {user_id: req.session.userId}
+    });
+
+    const messages = dbMessagesData.map(message => message.get({plain: true}));
+    res.render('dashboard', {messages, session: req.session});
 
 });
 

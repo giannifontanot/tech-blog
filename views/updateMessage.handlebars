@@ -1,15 +1,15 @@
-<form action="/message/saveMessage"  method="POST">
+<form action="/message/updateMessage"  method="POST">
 <section class="card">
     <div class="title-message-container">
         <div class="title">
-            <input type="text" name="title" placeholder="Write your title here" value="" size="105">
+            <input type="text" id="title" name="title" placeholder="" value="{{message.title}}" size="105">
         </div>
         <div class="btn-update-message">
-            <button>SAVE MESSAGE</button>
+            <input type="button" onclick="checkBlanks()" value="SAVE CHANGES">
         </div>
     </div>
     <div class="content-message">
-        <textarea id="content" name="content" placeholder="" rows="5" cols="100">Write the content</textarea>
+        <textarea id="content" name="content" placeholder="" rows="5" cols="100">{{message.content}}</textarea>
     </div>
 
     {{#each Comments as |comment|}}
@@ -17,4 +17,6 @@
     {{/each}}
     <div class="link-message"></div>
 </section>
+    <input type="hidden" name="message_id" value="{{message.id}}">
 </form>
+<script src="../public/scripts/blanks.js"></script>

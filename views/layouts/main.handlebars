@@ -6,22 +6,26 @@
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <header>
-   <div class="display-flex">
-       <div class="vred">
-           <nav>
-               <a href="/">Home</a>
-               {{#if session.loggedIn}}
-                   <a href="/user/logout">Logout</a>
-                   <a href="/dashboard/{{session.userId}}">Dashboard</a>
-               {{else}}
-                   <a href="/user/login">Login</a>
-               {{/if}}
-           </nav>
-       </div>
-       <div class="session-user vred">
-           <span class="session-user">User: {{session.username}}</span>
-       </div>
-   </div>
+    <div class="display-flex">
+        <div class="vred">
+            <nav>
+                <a href="/">Home</a>
+                {{#if session.loggedIn}}
+                    <a href="/user/logout">Logout</a>
+                    <a href="/dashboard/{{session.userId}}">Dashboard</a>
+                {{else}}
+                    <a href="/user/login">Login</a>
+                {{/if}}
+            </nav>
+        </div>
+        <div class="session-user vred">
+            {{#if session.loggedIn}}
+                <span class="session-user">User: {{session.username}}</span>
+            {{else}}
+                <span class="session-user">If you want to post, please login first.</span>
+            {{/if}}
+        </div>
+    </div>
 
     <h1 class="blogName">The Tech Blog</h1>
 </header>
@@ -33,6 +37,6 @@
 
 
 <footer>
-    This is the footer
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="">
 </footer>
 </html>

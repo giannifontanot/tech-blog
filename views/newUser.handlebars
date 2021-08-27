@@ -1,11 +1,66 @@
-<html>
-<body>
-<form action="/user/saveUser"  method="POST">
-    username<input type="text" name="username" value=""><br>
-   first name <input type="text" name="first_name" value=""><br>
-    last name<input type="text" name="last_name" value=""><br>
-    password <input type="text" name="password" value=""><br>
-    <button>save user</button><br>
+<div id="message" class="msg primary">Please fill in the data</div>
+
+<form action="/user/saveUser" method="POST">
+    <div class="form-container vred">
+        <div class="new-user-container">
+            <div class="col label">username</div>
+            <div class="col input">
+                <input type="text"
+                       id="username"
+                       name="username"
+                       value="">
+            </div>
+        </div>
+        <div class="new-user-container">
+            <div class="col label"> first name</div>
+            <div class="col input"><input type="text" id="first_name" name="first_name" value=""></div>
+        </div>
+        <div class="new-user-container">
+            <div class="col label">last name</div>
+            <div class="col input"><input type="text" id="last_name" name="last_name" value=""></div>
+        </div>
+        <div class="new-user-container">
+            <div class="col label">password</div>
+            <div class="col input"><input type="text" id="password" name="password" value=""></div>
+        </div>
+
+        <div class="new-user-container btn-save vred">
+            <input type="button" onclick="check(this)" value="save new user">
+        </div>
+    </div>
 </form>
-</body>
-</html>
+<script>
+    function check(e) {
+
+        const usernameVal = document.getElementById('username').value;
+        const firstNameVal = document.getElementById('first_name').value;
+        const lastNameVal = document.getElementById('last_name').value;
+        const passwordVal = document.getElementById('password').value;
+
+        if(usernameVal === ''){alert('Please enter a username.');return;}
+        if(firstNameVal === ''){alert('Please enter a first name.');return;}
+        if(lastNameVal === ''){alert('Please enter a last name.');return;}
+        if(passwordVal === ''){alert('Please enter a password.');return;}
+
+
+
+        fetch('/user/checkUsername/' + document.getElementById('username').value, {method: 'GET'})
+                .then(response=>response.json())
+                .then(data => {
+                    if (data.status === 'continue') {
+                        document.forms[0].submit();
+                    }else{
+                        alert('That username is already taken. Please choose another one.');
+                        document.getElementById('username').select();
+                    }
+                })
+                .catch(err => console.error(e.message));
+
+        console.log("---> fetch :");
+
+    }
+
+    function checxk(x){
+
+    }
+</script>

@@ -1,6 +1,6 @@
 .vred {
 
-    bodrder: 1px solid red;
+    xborder: 1px solid red;
 }
 
 body {
@@ -88,16 +88,17 @@ nav a:visited {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .session-user {
     height: 15px;
 }
 
-.link-message{
+.link-message {
     margin: 10px 10px 10px 20px;
-     font-size: 90%;
+    font-size: 90%;
 }
 
-.dashboard-header{
+.dashboard-header {
     margin: -10px 10px 0 10px;
     padding: 5px;
     font-size: 30px;
@@ -105,20 +106,80 @@ nav a:visited {
     background-color: gray;
 }
 
-.btn-update-message{
+.btn-update-message {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 10px;
 }
 
-.btn-new-message{
+.btn-new-message {
     margin-right: 10px;
     margin-top: -10px;
 }
 
-.title-message-container{
+.title-message-container {
     display: flex;
     justify-content: space-between;
     background-color: #231010;
 }
 
+.login-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-user-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.new-user-container .col {
+    width: 50%;
+    margin: 3px;
+}
+
+.input{
+    text-align: left;
+
+}
+.label{
+    text-align: right;
+}
+
+.input input{
+    border-radius: 3px;
+}
+
+.btn-save{
+    justify-content: center;
+    margin: 10px;
+}
+
+.form-container{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.msg  {
+    padding: 10px;
+    margin: 10px;
+    color: #D9E9CF;
+    border-radius: 3px;
+}
+
+.error  {
+    background-color: #B10000;
+    color: white;
+}
+
+.primary  {
+    background-color: #0062C8;
+    color: white;
+}
+
+footer{
+    margin-left: 10px;
+    margin-top: 40px;
+}
