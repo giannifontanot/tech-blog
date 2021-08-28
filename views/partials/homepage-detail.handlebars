@@ -1,6 +1,15 @@
 <article>
     <section class="card">
-        <div class="title">{{title}}</div>
+
+        <div class="title-message-container ">
+            <div class="title">
+                {{title}}
+            </div>
+            <div class="message-date">
+                {{User.username}} - {{formatDate createdAt}}
+            </div>
+        </div>
+
         <div class="content-message">   {{content}}  </div>
 
         {{#each Comments as |comment|}}

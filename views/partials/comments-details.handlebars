@@ -1,5 +1,4 @@
 <div class="container-comment">
-    <div class="author">{{User.username}}:</div>
-    <div class="content-comment">{{content}}
-    </div>
+    <div class="author">{{User.username}} - <span class="comment-date vred">{{formatDate createdAt}}:</span></div>
+    <div class="content-comment vred">{{content}}</div>
 </div>

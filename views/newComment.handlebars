@@ -1,12 +1,53 @@
-
-
-
 {{#if session.loggedIn}}
+
     <form action="/message/saveComment" method="POST">
-        <input type="text" name="content" value="this the content">
-        <input type="hidden" name="message_id" value="{{message_id}}">
-        <button>save comment</button>
+
+
+        <section class="card">
+            <div class="title-message-container ">
+                <div class="title">
+                    {{message.title}}
+                </div>
+                <div class="btn-update-message">
+                    <<input type="button" onclick="checkBlanks()" value="SAVE COMMENT">
+                </div>
+            </div>
+            <div class="content-message">
+                {{message.content}}
+            </div>
+
+
+            <textarea onclick='checkTextAreaNewMessage()'
+                      class="text-area-new-comment" id="content"
+                      name="content" placeholder=""
+                      rows="5" cols="100">Write the content</textarea>
+        </section>
+        <input type="hidden" name="message_id" value="{{message.id}}">
+
+
     </form>
 {{else}}
-    <div class="error">If you want to post, please login first.</div>
+    <div class="msg error">If you want to post, please login first.</div>
 {{/if}}
+<script>
+    // src="public/scripts/blanksNewComment.js">
+    const contentEl = document.getElementById('content');
+    let counter = 0;
+
+    function checkBlanks(e) {
+
+        if (contentEl.value === '' || contentEl.value === 'Write the content') {
+            alert('Verify the text of the comment. It cannot be blank.');
+        } else {
+            document.forms[0].submit();
+        }
+    }
+
+    function checkTextAreaNewMessage() {
+
+        if (counter === 0) {
+            contentEl.value = "";
+            counter++;
+        }
+    }
+</script>

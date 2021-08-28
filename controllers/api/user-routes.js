@@ -18,18 +18,18 @@ router.post('/verify', async (req, res) => {
 
     try {
 
-        const user = await User.findOne({where: {username: req.body.username}});
+        const dbUserData = await User.findOne({where: {username: req.body.username}});
 
-        if (user !== null && (user.password === req.body.password)) {
+        if (dbUserData !== null && (await dbUserData.checkPassword(req.body.password))) {
 
 
             await req.session.save(() => {
                 req.session.loggedIn = true;
-                req.session.userId = user.id;
-                req.session.username = user.username;
+                req.session.userId = dbUserData.id;
+                req.session.username = dbUserData.username;
 
             });
-            const dbMessagesData = await Message.findAll({where: {user_id: user.id}});
+            const dbMessagesData = await Message.findAll({where: {user_id: dbUserData.id}});
             const messages = dbMessagesData.map(messages => messages.get({plain: true}));
             res.render('dashboard', {
                 messages, session: req.session,

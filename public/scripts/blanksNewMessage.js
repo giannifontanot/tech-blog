@@ -2,7 +2,7 @@ const titleEl = document.getElementById('title');
 const contentEl = document.getElementById('content');
 let counter = 0;
 
-function checkBlanks(e) {
+function checkBlanks() {
 
     if (titleEl.value === '' || contentEl.value === '' || contentEl.value === 'Write the content') {
         alert('Verify the title and message. None of them can be blank.');

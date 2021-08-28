@@ -1,6 +1,6 @@
 .vred {
 
-    xborder: 1px solid red;
+    border: 1px solid red;
 }
 
 body {
@@ -49,7 +49,7 @@ header {
 }
 
 .content-comment {
-    margin: 0 0 0 10px;
+    maxrgin: 0 0 0 10px;
     font-size: 80%;
     font-family: "Garamond", sans-serif;
 }
@@ -86,7 +86,7 @@ nav a:visited {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .session-user {
@@ -139,47 +139,69 @@ nav a:visited {
     margin: 3px;
 }
 
-.input{
+.input {
     text-align: left;
 
 }
-.label{
+
+.label {
     text-align: right;
 }
 
-.input input{
+.input input {
     border-radius: 3px;
 }
 
-.btn-save{
+.btn-save {
     justify-content: center;
     margin: 10px;
 }
 
-.form-container{
+.form-container {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.msg  {
+.msg {
     padding: 10px;
     margin: 10px;
     color: #D9E9CF;
     border-radius: 3px;
 }
 
-.error  {
+.error {
     background-color: #B10000;
     color: white;
 }
 
-.primary  {
+.primary {
     background-color: #0062C8;
     color: white;
 }
 
-footer{
+footer {
     margin-left: 10px;
     margin-top: 40px;
+}
+
+.message-date {
+    color: white;
+    font-size: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+}
+
+.comment-date {
+    color: black;
+    font-size: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 4px;
+}
+
+.text-area-new-comment{
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
