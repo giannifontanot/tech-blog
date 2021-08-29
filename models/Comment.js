@@ -9,7 +9,7 @@ class Comment extends Model {
 
 Comment.init(
     {
-        id: {type: DataTypes.INTEGER, primaryKey: true,  allowNull: false, autoIncrement: true,},
+        id: {type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true,},
         content: {type: DataTypes.STRING, allowNull: false,},
         //message_id: {type: DataTypes.INTEGER, allowNull: false},
         //user_id: {type: DataTypes.INTEGER, allowNull: false}

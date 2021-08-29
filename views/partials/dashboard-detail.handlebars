@@ -1,14 +1,16 @@
 <article>
-    <form id="frmUpdateMsg" action=""  onsubmit="fOnSubmit()" method="">
-     <section class="card">
+    <form id="frmUpdateMsg" action="" onsubmit="fOnSubmit()" method="">
+        <section class="card">
 
-     <div class="title-message-container ">
+            <div class="title-message-container ">
                 <div class="title">
                     {{title}}
                 </div>
                 <div class="btn-update-message">
-                    <input type="button" value="DELETE MESSAGE" id='btnDelete' onclick="deleteMessage(this)">
-                    <input type="button" value="UPDATE MESSAGE" id='btnDelete' onclick="updateMessage(this)">
+                    <input type="button" class="css-button-rounded--grey" value="DELETE MESSAGE" id='btnDelete'
+                           onclick="deleteMessage(this)">
+                    <input type="button" class="css-button-rounded--grey" value="UPDATE MESSAGE" id='btnDelete'
+                           onclick="updateMessage(this)">
                 </div>
             </div>
             <div class="content-message">
@@ -22,28 +24,4 @@
         <input type="hidden" id="message_id" name="message_id" value="{{id}}">
     </form>
 </article>
-<script>
-    const frmUpdateMsg = document.getElementById('frmUpdateMsg');
-
-    function deleteMessage(object) {
-        if (confirm("Do you really want to delete the message?")) {
-
-            frmUpdateMsg.action = "/message/deleteMessage/" + document.getElementById('message_id').value;
-            frmUpdateMsg.method = "DELETE";
-            frmUpdateMsg.submit();
-        }
-    }
-
-
-    function updateMessage(object) {
-        frmUpdateMsg.action = "/message/getMessage";
-        frmUpdateMsg.method = "POST";
-        frmUpdateMsg.setAttribute("Content-type", "text/html; charset=UTF-8");
-        frmUpdateMsg.submit();
-
-    }
-
-    function fOnSubmit(){
-        alert(frmUpdateMsg.method)
-    }
-</script>
+<script src="../../public/scripts/blanksNewComment.js"></script>

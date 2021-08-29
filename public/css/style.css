@@ -1,6 +1,6 @@
 .vred {
 
-    border: 1px solid red;
+    xborder: 1px solid red;
 }
 
 body {
@@ -30,8 +30,9 @@ header {
 .blogName {
     color: #231010;
     box-shadow: 5px 5px 8px grey;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px;
     background-color: #D9E9CF;
     text-space: nowrap;
     display: inline-block;
@@ -201,7 +202,57 @@ footer {
     margin-right: 4px;
 }
 
-.text-area-new-comment{
+.text-area-new-comment {
     margin-left: 10px;
     margin-bottom: 10px;
+}
+
+.css-button-rounded--brown {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #495057;
+    background: #231010;
+}
+
+.css-button-rounded--brown:hover {
+    background: #fff;
+    color: #495057
+}
+
+.css-button-rounded--grey {
+    min-width: 130px;
+    hexight: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #80807E;
+    background: #495057;
+}
+
+.css-button-rounded--grey:hover {
+    background: #fff;
+    color: #495057
+}
+
+.btn-login {
+    width: 200px;
+}
+
+.lbl-login {
+    background-color: #80807E;
 }

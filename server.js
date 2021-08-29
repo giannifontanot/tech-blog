@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 const configSession = {
     secret: 'this is a secret',
-    cookie: {path:'/', maxAge: 86400000,},
+    cookie: {path: '/', maxAge: 86400000,},
     resave: false,
     saveUninitialized: true,
     //store: new SequelizeStore({db: sequelize}),
@@ -32,7 +32,7 @@ app.engine('handlebars', hbs.engine);
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use('/public', express.static( 'public'));
+app.use('/public', express.static('public'));
 
 app.use(routes);
 

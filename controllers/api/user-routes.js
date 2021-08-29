@@ -3,15 +3,26 @@ const dbQueries = require('../../utils/db-queries');
 const {User, Message, Comment} = require('../../models');
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    try {
+
+        res.render('login');
+    } catch (e) {
+        console.error(e.message);
+    }
 });
 
 router.get('/logout', (req, res) => {
-    req.session.destroy(async () => {
-        const dbMessageData = await Message.findAll({include: {all: true, nested: true},});
-        const messages = dbMessageData.map((element) => element.get({plain: true}));
-        res.render('homepage', {messages, session: req.session,});
-    });
+
+    try {
+        req.session.destroy(async () => {
+            const dbMessageData = await Message.findAll({include: {all: true, nested: true},});
+            const messages = dbMessageData.map((element) => element.get({plain: true}));
+            res.render('homepage', {messages, session: req.session,});
+        });
+
+    } catch (e) {
+        console.error(e.message);
+    }
 });
 
 router.post('/verify', async (req, res) => {
@@ -44,24 +55,34 @@ router.post('/verify', async (req, res) => {
 });
 
 router.get('/newUser', (req, res) => {
-    res.render('newUser');
+    try {
+        res.render('newUser');
+
+    } catch (e) {
+        console.error(e.message);
+    }
 });
 
 router.post('/saveUser', async (req, res) => {
-    const newUser = await User.create({
-        username: req.body.username,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        password: req.body.password
-    });
-    res.render('login', {session: req.session,},)
+    try {
+        const newUser = await User.create({
+            username: req.body.username,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            password: req.body.password
+        });
+        res.render('login', {session: req.session,},)
+
+    } catch (e) {
+        console.error(e.message);
+    }
 });
 
 
 router.get('/checkUsername/:username', async (req, res) => {
     try {
         const user = await User.findOne({where: {username: req.params.username}});
-        if (user ===  null ) {
+        if (user === null) {
             res.json({status: "continue"});
         } else {
             res.json({status: "existent"});
@@ -69,7 +90,6 @@ router.get('/checkUsername/:username', async (req, res) => {
     } catch (e) {
         console.error(e.message);
     }
-
 
 });
 

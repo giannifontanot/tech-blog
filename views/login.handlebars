@@ -1,32 +1,34 @@
-
-    <section class="card">
-        <div class="title-message-container">
-            <div class="title">
-                login
-            </div>
-            <div class="btn-update-message">
-                <button>LOG IN</button>
-            </div>
+<section class="card">
+    <div class="title-message-container">
+        <div class="title">
+            login
         </div>
-        <div class="content-message">
-            <form action="/user/verify" method="POST">
-                <div class="login-container">
-                    <div><input type="text" name="username" placeholder="username" value="harrisonford"></div>
-                    <div><input type="text" name="password" placeholder="password" value="aaa"></div>
+        <div class="btn-update-message">
+
+        </div>
+    </div>
+    <div class="content-message">
+
+
+        <form action="/user/verify" method="POST">
+            <div class="form-container vred">
+                <div class="new-user-container">
+                    <div class="col label">username</div>
+                    <div class="col input">
+                        <input type="text" id="username" name="username" value="harrisonford" size="9">
+                    </div>
+                </div>
+                <div class="new-user-container">
+                    <div class="col label">password</div>
+                    <div class="col input"><input type="password" id="password" name="password" value="aaa"  size="9"></div>
                 </div>
 
-                <button>login</button><br>
-            </form>
-            <form action="/user/verify" method="POST">
-                username <input type="text" name="username" value="carriefisher"><br>
-                password <input type="text" name="password" value="aaa"><br>
-                <button>login</button><br>
-            </form>
-            <form action="/user/verify" method="POST">
-                username <input type="text" name="username" value="markhamill"><br>
-                password <input type="text" name="password" value="aaa"><br>
-                <button>login</button><br>
-            </form>
-        </div>
+                <div class="new-user-container btn-save vred">
+                    <button class="css-button-rounded--brown btn-login">LOG IN</button>
+                </div>
+            </div>
+        </form>
         <div class="link-message"><a href="newUser">New user? SIGN UP!</a></div>
-    </section>
+    </div>
+</section>
+

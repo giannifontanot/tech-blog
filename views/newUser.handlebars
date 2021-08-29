@@ -1,4 +1,4 @@
-<div id="message" class="msg primary">Please fill in the data</div>
+<div id="message" class="msg primary">Please fill in the data. You will be redirected to the login screen.</div>
 
 <form action="/user/saveUser" method="POST">
     <div class="form-container vred">
@@ -21,11 +21,11 @@
         </div>
         <div class="new-user-container">
             <div class="col label">password</div>
-            <div class="col input"><input type="text" id="password" name="password" value=""></div>
+            <div class="col input"><input type="password" id="password" name="password" value=""></div>
         </div>
 
         <div class="new-user-container btn-save vred">
-            <input type="button" onclick="check(this)" value="save new user">
+            <input type="button" class="css-button-rounded--grey" onclick="check(this)" value="save new user">
         </div>
     </div>
 </form>
@@ -60,7 +60,4 @@
 
     }
 
-    function checxk(x){
-
-    }
 </script>
