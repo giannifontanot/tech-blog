@@ -1,22 +1,17 @@
 [
   {
-    "content": "comment 1 for message 1 - user 1",
+    "content": "You came in that thing? You’re braver than I thought.",
     "message_id": 1,
-    "user_id": 1
-  },
-  {
-    "content": "comment 2 for message 2 - user 2",
-    "message_id": 2,
     "user_id": 2
   },
   {
-    "content": "comment 2 for message 2 - user 3",
-    "message_id": 2,
-    "user_id": 3
+    "content": "Hope is like the sun. If you only believe it when you see it you’ll never make it through the night.",
+    "message_id": 3,
+    "user_id": 2
   },
   {
-    "content": "comment 3 for message 3 -user 3",
-    "message_id": 3,
-    "user_id": 3
+    "content": "Look, your Worshipfulness, let's get one thing straight. I take orders from just one person: me.",
+    "message_id": 2,
+    "user_id": 1
   }
 ]

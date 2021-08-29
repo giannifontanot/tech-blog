@@ -1,5 +1,5 @@
 [
-  {"title":"Title 1", "content":"Hey, this is the first message", "user_id":1},
-  {"title":"Title 2", "content":"Hey, this is the second message", "user_id":2},
-  {"title":"Title 3", "content":"Hey, this is the third message", "user_id":3}
+  {"title":"You've never heard of the Millennium Falcon?", "content":"It’s the ship that made the Kessel run in less than 12 parsecs.", "user_id":1},
+  {"title":"Will someone get this big walking carpet out of my way?", "content":"Someone has to save our skins. Into the garbage chute, Fly Boy.", "user_id":2},
+  {"title":"The force Is strong in my family.","content":"You must feel the Force flow around you. Here, between you, me, the tree, the rock, yes, even between the land and the ship.", "user_id":3}
 ]
