@@ -1,6 +1,13 @@
+/**
+ * Routes to be used in dashboard screen
+ * @type {Router}
+ */
 const router = require('express').Router();
 const {Message} = require('../../models/');
 
+/**
+ * Dashboard screen
+ */
 router.get('/', async (req, res) => {
     try {
 
@@ -14,11 +21,13 @@ router.get('/', async (req, res) => {
         })
         res.render('Dashboard', {messages, session: req.session,});
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 })
 
-// By just clicking the link once we are logged in
+/**
+ * Find all messages from a certain user to show in Dashboard
+ */
 router.get('/:user_id', async (req, res) => {
     try {
         const dbMessageData = await Message.findAll({
@@ -30,7 +39,7 @@ router.get('/:user_id', async (req, res) => {
 
         res.render('dashboard', {messages, session: req.session,});
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 

@@ -1,16 +1,27 @@
+
+/**
+ * Routes to manage users
+ */
 const router = require('express').Router();
 const dbQueries = require('../../utils/db-queries');
 const {User, Message, Comment} = require('../../models');
 
+/**
+ * Show the login screen
+ */
 router.get('/login', (req, res) => {
     try {
 
         res.render('login');
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+
+/**
+ * Logout a user
+ */
 router.get('/logout', (req, res) => {
 
     try {
@@ -21,10 +32,14 @@ router.get('/logout', (req, res) => {
         });
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Setup a session for a user after verifying password
+ *
+ */
 router.post('/verify', async (req, res) => {
 
     try {
@@ -50,19 +65,25 @@ router.post('/verify', async (req, res) => {
         }
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Show new user screen
+ */
 router.get('/newUser', (req, res) => {
     try {
         res.render('newUser');
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Save new user data
+ */
 router.post('/saveUser', async (req, res) => {
     try {
         const newUser = await User.create({
@@ -74,11 +95,14 @@ router.post('/saveUser', async (req, res) => {
         res.render('login', {session: req.session,},)
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
 
+/**
+ * Check the previous existence of a username
+ */
 router.get('/checkUsername/:username', async (req, res) => {
     try {
         const user = await User.findOne({where: {username: req.params.username}});
@@ -88,7 +112,7 @@ router.get('/checkUsername/:username', async (req, res) => {
             res.json({status: "existent"});
         }
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 
 });

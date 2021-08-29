@@ -1,3 +1,6 @@
+/**
+ * Comment model for Sequelize
+ */
 const {DataTypes, Model} = require('sequelize');
 const Message = require('./Message');
 const User = require('./User');

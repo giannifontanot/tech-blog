@@ -1,3 +1,7 @@
+/**
+ * Verify empty fields
+ * @type {HTMLElement}
+ */
 const titleEl = document.getElementById('title');
 const contentEl = document.getElementById('content');
 let counter = 0;

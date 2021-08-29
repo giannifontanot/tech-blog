@@ -135,6 +135,12 @@ nav a:visited {
     justify-content: space-between;
 }
 
+.login-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .new-user-container .col {
     width: 50%;
     margin: 3px;

@@ -1,16 +1,26 @@
+/**
+ * Routes to manage messages
+ * @type {Message}
+ */
 const Message = require("../../models/Message");
 const Comment = require("../../models/Comment");
 const router = require('express').Router();
 
+/**
+ * Show new message screen
+ */
 router.get('/newMessage', (req, res) => {
     try {
         res.render('newMessage', {session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Show comments of a certain message
+ */
 router.get('/newComment/:id', async (req, res) => {
     try {
         const dbMessageData = await Message.findByPk(req.params.id);
@@ -25,11 +35,14 @@ router.get('/newComment/:id', async (req, res) => {
         res.render('newComment', {message, session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
 
+/**
+ * Save a comment
+ */
 router.post('/saveComment', async (req, res) => {
     try {
         const comment = await Comment.create({
@@ -42,10 +55,13 @@ router.post('/saveComment', async (req, res) => {
         res.render('homepage', {messages, session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Save a message
+ */
 router.post('/saveMessage', async (req, res) => {
     try {
         const message = await Message.create({
@@ -64,10 +80,13 @@ router.post('/saveMessage', async (req, res) => {
         res.render('dashboard', {messages, session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Show on screen a certain message
+ */
 router.post('/getMessage', async (req, res) => {
     try {
         const dbMessageData = await Message.findByPk(req.body.message_id,);
@@ -81,13 +100,17 @@ router.post('/getMessage', async (req, res) => {
         res.render('updateMessage', {message, session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+
+/**
+ * Delete a message
+ */
 router.get('/deleteMessage/:id', async (req, res) => {
     try {
-        const result = Message.destroy({where: {id: req.params.id}});
+        const result = await Message.destroy({where: {id: req.params.id}});
         // By saving one message and redirecting to dashboard
         const dbMessagesData = await Message.findAll({
             // include: {all: true, nested: true},
@@ -98,10 +121,13 @@ router.get('/deleteMessage/:id', async (req, res) => {
         res.render('dashboard', {messages, session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 
+/**
+ * Update a message
+ */
 router.post('/updateMessage', async (req, res) => {
     try {
         const message = await Message.update(
@@ -122,7 +148,7 @@ router.post('/updateMessage', async (req, res) => {
         res.render('dashboard', {messages, session: req.session});
 
     } catch (e) {
-        console.error(e.message);
+        console.error(" ++++ " + __filename + " " + e.message);
     }
 });
 

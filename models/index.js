@@ -1,3 +1,6 @@
+/**
+ * Relationships between the models
+ */
 const Sequelize = require('sequelize');
 const User = require('./User')
 const Message = require('./Message')
