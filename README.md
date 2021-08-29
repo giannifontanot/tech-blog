@@ -30,7 +30,10 @@ This project uses many packages from NPM.
 - sequelize
 
 ## Usage
-The user can browse the blog without authentication, but if he or she wants to post or comment about other's posts a login is needed. The site is very easy to navigate. There is an option to create a new user, in case someone wants to contribute but is not registered yet.
+The user can browse the blog without authentication, but if he or she wants to post or comment about other 
+people's posts, then a login is needed. The site is very easy to navigate. There is an option to create a new user, in 
+people's posts, then a login is needed. The site is very easy to navigate. There is an option to create a new user, in 
+case someone wants to contribute but is not registered yet.
 
 ![tech-blog.gif](docs/tech-blog.gif)
 
@@ -45,12 +48,12 @@ the project.
  - [sequelize associations](https://sequelize.org/master/manual/associations.html)
  - [Four Sequelize Associations You Should Know](https://javascript.plainenglish.io/four-sequelize-associations-you-should-know-415d8d413e1e)
  - [A Step By Step Guide To Using Handlebars With Your Node js App](https://waelyasmina.medium.com/a-guide-into-using-handlebars-with-your-express-js-application-22b944443b65)
-
+ - [How to deploy a NodeJS app to Heroku](https://www.freecodecamp.org/news/how-to-deploy-a-nodejs-app-to-heroku-from-github-without-installing-heroku-on-your-machine-433bec770efe/)
 
 ## Current Features
 ````````````````````````
 - It is a CMS-style blog site
-- Uses authentication to distinguish among the users
+- Uses authentication to distinguish among users
 - Follows the MVC paradigm of architectural structure
 - Its easy to navigate and use
 ````````````````````````
