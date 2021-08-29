@@ -9,11 +9,11 @@ This project is about creating a blog site similar to a Wordpress site, where de
 	* [Usage](#usage)
 	* [Database](#database)
     * [Credits](#credits)	  
-	* [Features](#features)
+	* [Future Features](#Future Features)
 	* [Contributions](#contributions)
 - [🔗 Links](#---links)
 	+ [GitHub Repository](#github-repository)
-	+ [Live Link in Heroku](#live-link)
+	+ [Live Link in Heroku](#Live Link in Heroku)
 	+ [Support](#support)
 	+ [Authors](#authors)
 ## Installation
