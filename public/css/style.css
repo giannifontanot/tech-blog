@@ -25,6 +25,13 @@ header {
     padding: 10px;
     box-shadow: 1px 1px 2px gray;
     border-radius: 5px 5px 0 0;
+
+}
+
+@media (min-width: 400px) {
+    header {
+        font-size: 2vh;
+    }
 }
 
 .blogName {
@@ -45,8 +52,20 @@ header {
     color: #D9E9CF;
 }
 
+@media (min-width: 400px) {
+    .title {
+        font-size: 1.8vh;
+    }
+}
+
 .content-message {
     margin: 5px 0 5px 10px;
+}
+
+@media (min-width: 400px) {
+    .content-message {
+        font-size: 1.1vh;
+    }
 }
 
 .content-comment {
@@ -55,10 +74,23 @@ header {
     font-family: "Garamond", sans-serif;
 }
 
+@media (min-width: 400px) {
+    .content-comment {
+        font-size: 1.8vh;
+    }
+}
+
 .author {
     margin: 0 0 0 20px;
     font-size: 80%;
     font-weight: bold;
+
+}
+
+@media (min-width: 400px) {
+    .author {
+        font-size: 1.7vh;
+    }
 }
 
 nav a:link {
@@ -69,6 +101,12 @@ nav a:visited {
     color: white;
 }
 
+@media (min-width: 400px) {
+    a {
+        font-size: 2vh;
+    }
+
+}
 
 .display-flex {
     display: flex;
@@ -88,6 +126,7 @@ nav a:visited {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    font-size: 2vh;
 }
 
 .session-user {
@@ -155,8 +194,20 @@ nav a:visited {
     text-align: right;
 }
 
+@media (min-width: 400px) {
+    .label {
+        font-size: 2vh;
+    }
+}
+
 .input input {
     border-radius: 3px;
+}
+
+@media (min-width: 400px) {
+    input {
+        font-size: 1.5vh;
+    }
 }
 
 .btn-save {
@@ -182,9 +233,21 @@ nav a:visited {
     color: white;
 }
 
+@media (min-width: 400px) {
+    .error {
+        font-size: 2vh;
+    }
+}
+
 .primary {
     background-color: #0062C8;
     color: white;
+}
+
+@media (min-width: 400px) {
+    .primary {
+        font-size: 2vh;
+    }
 }
 
 footer {
@@ -208,6 +271,14 @@ footer {
     margin-right: 4px;
 }
 
+@media (min-width: 400px) {
+    .comment-date {
+        font-size: 1vh;
+        margin: 2px;
+    }
+
+}
+
 .text-area-new-comment {
     margin-left: 10px;
     margin-bottom: 10px;
@@ -227,6 +298,13 @@ footer {
     border-radius: 5px;
     border: 2px solid #495057;
     background: #231010;
+}
+
+@media (min-width: 400px) {
+    .css-button-rounded--brown, .css-button-rounded--grey {
+        font-size: 2vh;
+    }
+
 }
 
 .css-button-rounded--brown:hover {
@@ -262,3 +340,18 @@ footer {
 .lbl-login {
     background-color: #80807E;
 }
+
+.msg-altern-login {
+    margin-left: auto;
+    margin-right: auto;
+    color: gray;
+
+}
+
+@media (min-width: 400px) {
+    .msg-altern-login {
+        font-size: 2vh;
+    }
+
+}
+
