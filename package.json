@@ -1,6 +1,10 @@
 {
   "name": "14-Tech-Blog",
   "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "app-root-path": "^3.0.0",
     "connect-session-sequelize": "^7.1.1",
