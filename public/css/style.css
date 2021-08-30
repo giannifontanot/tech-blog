@@ -95,15 +95,19 @@ header {
 
 nav a:link {
     color: white;
+    font-size: 100%;
 }
 
 nav a:visited {
     color: white;
+    font-size: 100%;
 }
+
+
 
 @media (min-width: 400px) {
     a {
-        font-size: 2vh;
+        font-size: 1.5vh;
     }
 
 }
@@ -273,7 +277,7 @@ footer {
 
 @media (min-width: 400px) {
     .comment-date {
-        font-size: 1vh;
+        font-size: 1.0vh;
         margin: 2px;
     }
 
@@ -350,7 +354,7 @@ footer {
 
 @media (min-width: 400px) {
     .msg-altern-login {
-        font-size: 2vh;
+        font-size: 1.5vh;
     }
 
 }

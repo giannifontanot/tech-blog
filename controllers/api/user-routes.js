@@ -1,4 +1,3 @@
-
 /**
  * Routes to manage users
  */
@@ -43,10 +42,17 @@ router.get('/logout', (req, res) => {
 router.post('/verify', async (req, res) => {
 
     try {
+        const username = req.body.username;
+        const  usernameTrim  = username.trim();
+         console.log("---> usernameTrim :>" +  (usernameTrim) +"<");
 
-        const dbUserData = await User.findOne({where: {username: req.body.username}});
+        const password = req.body.password;
+        const  passwordTrim  = password.trim();
+         console.log("---> passwordTrim :>" + (passwordTrim) +"<");
 
-        if (dbUserData !== null && (await dbUserData.checkPassword(req.body.password))) {
+        const dbUserData = await User.findOne({where: {username: usernameTrim}});
+
+        if (dbUserData !== null && (await dbUserData.checkPassword(passwordTrim))) {
 
 
             await req.session.save(() => {
@@ -87,10 +93,10 @@ router.get('/newUser', (req, res) => {
 router.post('/saveUser', async (req, res) => {
     try {
         const newUser = await User.create({
-            username: req.body.username,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            password: req.body.password
+            username: req.body.username.trim(),
+            first_name: req.body.first_name.trim(),
+            last_name: req.body.last_name.trim(),
+            password: req.body.password.trim()
         });
         res.render('login', {session: req.session,},)
 
@@ -105,7 +111,9 @@ router.post('/saveUser', async (req, res) => {
  */
 router.get('/checkUsername/:username', async (req, res) => {
     try {
-        const user = await User.findOne({where: {username: req.params.username}});
+        const username = req.params.username;
+        const usernameTrim = username.trim();
+        const user = await User.findOne({where: {username: usernameTrim}});
         if (user === null) {
             res.json({status: "continue"});
         } else {
