@@ -1,6 +1,6 @@
 .vred {
 
-    xborder: 1px solid red;
+    bxorder: 1px solid red;
 }
 
 body {
@@ -28,7 +28,7 @@ header {
 
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     header {
         font-size: 2vh;
     }
@@ -52,7 +52,7 @@ header {
     color: #D9E9CF;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .title {
         font-size: 1.8vh;
     }
@@ -62,21 +62,23 @@ header {
     margin: 5px 0 5px 10px;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .content-message {
-        font-size: 1.1vh;
+        font-size: 1vh;
+        border-bottom: 1px solid gray;
     }
 }
 
 .content-comment {
-    maxrgin: 0 0 0 10px;
-    font-size: 80%;
+    margin: 0 0 0 10px;
+    font-size: 95%;
     font-family: "Garamond", sans-serif;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .content-comment {
-        font-size: 1.8vh;
+        font-size: 2vh;
+        margin-top: 10px;
     }
 }
 
@@ -87,7 +89,15 @@ header {
 
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
+    .author-container {
+        width: 30%;
+        margin: 20px;
+    }
+}
+
+
+@media screen and (max-device-width: 414px) {
     .author {
         font-size: 1.7vh;
     }
@@ -104,10 +114,9 @@ nav a:visited {
 }
 
 
-
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     a {
-        font-size: 1.5vh;
+        font-size: 0.85vh;
     }
 
 }
@@ -130,7 +139,7 @@ nav a:visited {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    font-size: 2vh;
+    xfont-size: 2vh;
 }
 
 .session-user {
@@ -198,7 +207,7 @@ nav a:visited {
     text-align: right;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .label {
         font-size: 2vh;
     }
@@ -208,7 +217,7 @@ nav a:visited {
     border-radius: 3px;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     input {
         font-size: 1.5vh;
     }
@@ -237,7 +246,7 @@ nav a:visited {
     color: white;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .error {
         font-size: 2vh;
     }
@@ -248,7 +257,7 @@ nav a:visited {
     color: white;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .primary {
         font-size: 2vh;
     }
@@ -270,17 +279,15 @@ footer {
 .comment-date {
     color: black;
     font-size: 70%;
-    margin-top: auto;
-    margin-bottom: auto;
     margin-right: 4px;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .comment-date {
-        font-size: 1.0vh;
+        font-size: 1vh;
         margin: 2px;
+        font-style: italic;
     }
-
 }
 
 .text-area-new-comment {
@@ -304,7 +311,7 @@ footer {
     background: #231010;
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .css-button-rounded--brown, .css-button-rounded--grey {
         font-size: 2vh;
     }
@@ -352,10 +359,21 @@ footer {
 
 }
 
-@media (min-width: 400px) {
+@media screen and (max-device-width: 414px) {
     .msg-altern-login {
         font-size: 1.5vh;
     }
 
 }
 
+@media screen and (max-device-width: 414px) {
+    footer img {
+        width: 12vh;
+    }
+}
+
+@media screen and (max-device-width: 414px) {
+    .signup-link {
+        font-size: 1.5vh;
+    }
+}
