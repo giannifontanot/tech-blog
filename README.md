@@ -32,7 +32,6 @@ This project uses many packages from NPM.
 ## Usage
 The user can browse the blog without authentication, but if he or she wants to post or comment about other 
 people's posts, then a login is needed. The site is very easy to navigate. There is an option to create a new user, in 
-people's posts, then a login is needed. The site is very easy to navigate. There is an option to create a new user, in 
 case someone wants to contribute but is not registered yet.
 
 ![tech-blog.gif](docs/tech-blog.gif)
